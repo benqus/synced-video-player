@@ -1,0 +1,12 @@
+[ 
+  {
+    "sources" : [ "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_30MB.mp4" ],
+    "subtitle" : "By Blender Foundation",
+    "title" : "Big Buck Bunny"
+  },
+  {
+    "sources" : [ "https://test-videos.co.uk/vids/jellyfish/mp4/h264/720/Jellyfish_720_10s_30MB.mp4" ],
+    "subtitle" : "By http://www.jell.yfish.us/",
+    "title" : "Jelly Fish"
+  }
+]
