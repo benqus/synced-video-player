@@ -13,7 +13,7 @@ export default class SyncedVideoSeekbar extends LitElement {
   @property({ type: Number })
   currentTime: number = 0;
 
-  onChangeSeekToTime = (e: Event): void => {
+  onInputSeekToTime = (e: Event): void => {
     const { value } = e.target as HTMLInputElement;
     const detail: number = parseFloat(value);
     this.dispatchEvent(new CustomEvent('seek', { detail }));
@@ -21,7 +21,7 @@ export default class SyncedVideoSeekbar extends LitElement {
 
   render(): TemplateResult {
     return html`
-      <input type="range" min="0" step="0.001" max=${this.duration} .value=${this.currentTime} @change=${this.onChangeSeekToTime}>
+      <input type="range" min="0" step="0.001" max=${this.duration} .value=${this.currentTime} @input=${this.onInputSeekToTime}>
     `;
   }
 }

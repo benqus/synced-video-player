@@ -19,9 +19,6 @@ export default class SyncedVideoPlayer extends LitElement {
   @internalProperty()
   duration: number = 0;
 
-  @property({ type: Number })
-  index: number = 0;
-
   @property({ type: Object })
   data: any = null;
 
@@ -56,21 +53,17 @@ export default class SyncedVideoPlayer extends LitElement {
     super.disconnectedCallback();
   }
 
-  onSeekedVideo = (e: Event): void => {
-    this.loading = false;
-  }
-
-  onSeekingVideo = (e: Event): void => {
-    this.loading = true;
-  }
-
-  onLoadedMetadata = (e: Event) => {
+  onLoadedMetadata = (e: Event): void => {
     const { duration, currentTime } = e.target as HTMLVideoElement;
     this.duration = duration;
     this.currentTime = currentTime;
     this.loading = false;
   }
 
+  /**
+   * TODO - video timeupdate events are a bit jerky
+   * TODO - refactor this to have a 30-60fps timeout for smoother updates
+   */
   onTimeUpdate = (e: Event): void => {
     const { currentTime } = e.target as HTMLVideoElement;
     this.currentTime = currentTime;
@@ -94,11 +87,10 @@ export default class SyncedVideoPlayer extends LitElement {
           <p class="subtitle">${subtitle}</p>
           ${this.renderMetadata}
         </header>
-        <video @timeupdate=${this.onTimeUpdate} @seeked=${this.onSeekedVideo} @seeking=${this.onSeekingVideo} @loadedmetadata=${this.onLoadedMetadata}>
+        <video @timeupdate=${this.onTimeUpdate} @seeked=${_ => this.loading = false} @seeking=${_ => this.loading = true} @loadedmetadata=${this.onLoadedMetadata}>
           ${this.renderVideoSources(sources)}
         </video>
-        <synced-video-seekbar class="seekbar" .duration=${this.duration} .currentTime=${this.currentTime} @seek=${this.onSeek}>
-        </synced-video-seekbar>
+        ${this.renderSeekbar}
         <aside>
           <nav>
             <button @click=${this.onClickSyncToCurrentTime}>sync here</button>
@@ -106,6 +98,13 @@ export default class SyncedVideoPlayer extends LitElement {
         </aside
       </article>
     `;
+  }
+
+  get renderSeekbar(): TemplateResult {
+    if (this.video) {
+      return html`<synced-video-seekbar class="seekbar" .duration=${this.duration} .currentTime=${this.currentTime} @seek=${this.onSeek}></synced-video-seekbar>`;
+    }
+    return null;
   }
 
   get renderMetadata(): TemplateResult {
