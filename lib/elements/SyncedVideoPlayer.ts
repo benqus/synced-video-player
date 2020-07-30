@@ -101,7 +101,7 @@ export default class SyncedVideoPlayer extends LitElement {
         </synced-video-seekbar>
         <aside>
           <nav>
-            <button @click=${this.onClickSyncToCurrentTime}>sync to</button>
+            <button @click=${this.onClickSyncToCurrentTime}>sync here</button>
           </nav>
         </aside
       </article>
