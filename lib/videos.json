@@ -1,12 +1,22 @@
-[ 
+[
   {
-    "sources" : [ "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_30MB.mp4" ],
-    "subtitle" : "By Blender Foundation",
-    "title" : "Big Buck Bunny"
+    "sources" : [ "https://media.istockphoto.com/videos/amalfi-amalfi-coast-salerno-italy-aerial-view-of-the-city-st-andrews-video-id1067570924" ],
+    "subtitle" : "https://www.istockphoto.com/video/amalfi-amalfi-coast-salerno-italy-aerial-view-of-the-city-st-andrews-cathedral-gm1067570924-285522118",
+    "title" : "Amalfi Coast Aerial View"
   },
   {
-    "sources" : [ "https://test-videos.co.uk/vids/jellyfish/mp4/h264/720/Jellyfish_720_10s_30MB.mp4" ],
-    "subtitle" : "By http://www.jell.yfish.us/",
-    "title" : "Jelly Fish"
+    "sources" : [ "https://www.istockphoto.com/video/aerial-view-of-the-city-london-uk-4k-gm1037138024-277620497" ],
+    "subtitle" : "https://www.istockphoto.com/video/aerial-view-of-the-city-london-uk-4k-gm1037138024-277620497",
+    "title" : "The City, London Aerial View"
+  },
+  {
+    "sources" : [ "https://media.istockphoto.com/videos/barcelona-aerial-view-by-drone-video-id1006268466" ],
+    "subtitle" : "https://www.istockphoto.com/video/barcelona-aerial-view-by-drone-gm1006268466-271606626",
+    "title" : "Barcelona Aerial View"
+  },
+  {
+    "sources" : [ "https://media.istockphoto.com/videos/aerial-view-4k-video-by-drone-of-blue-city-village-in-jodhpur-india-video-id1096289780" ],
+    "subtitle" : "https://www.istockphoto.com/video/aerial-view-4k-video-by-drone-of-blue-city-village-in-jodhpur-rajasthan-india-gm1096289780-294341023",
+    "title" : "Jodhpur, Rajasthan, India Aerial View"
   }
 ]

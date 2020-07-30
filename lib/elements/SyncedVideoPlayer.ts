@@ -91,7 +91,7 @@ export default class SyncedVideoPlayer extends LitElement {
       <article>
         <header>
           <h3>${title}</h3>
-          <p>${subtitle}</p>
+          <p class="subtitle">${subtitle}</p>
           ${this.renderMetadata}
         </header>
         <video @timeupdate=${this.onTimeUpdate} @seeked=${this.onSeekedVideo} @seeking=${this.onSeekingVideo} @loadedmetadata=${this.onLoadedMetadata}>

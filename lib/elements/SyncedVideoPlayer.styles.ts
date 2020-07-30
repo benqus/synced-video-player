@@ -19,6 +19,10 @@ export default css`
     margin: 0;
   }
 
+  .subtitle {
+    font-size: .8em
+  }
+
   .metadata {
     position: absolute;
     top: 0;
